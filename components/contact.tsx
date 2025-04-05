@@ -84,25 +84,29 @@ export default function Contact() {
               <h3 className="mb-4 text-xl font-semibold">Connect With Me</h3>
               <div className="flex space-x-4">
                 <motion.a
-                  href="#"
+                  href="https://github.com/saurav7557"
                   className="rounded-full bg-card p-3 text-primary shadow-sm transition-all hover:bg-primary hover:text-white"
                   aria-label="GitHub"
                   whileHover={{ scale: 1.2, rotate: 5 }}
                   whileTap={{ scale: 0.9 }}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <Github className="h-6 w-6" />
                 </motion.a>
                 <motion.a
-                  href="#"
+                  href="https://www.linkedin.com/in/saurav-kumar-88b8a4256"
                   className="rounded-full bg-card p-3 text-primary shadow-sm transition-all hover:bg-primary hover:text-white"
                   aria-label="LinkedIn"
                   whileHover={{ scale: 1.2, rotate: -5 }}
                   whileTap={{ scale: 0.9 }}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <Linkedin className="h-6 w-6" />
                 </motion.a>
                 <motion.a
-                  href="mailto:example@example.com"
+                  href="mailto:sauravkumar9447@gmail.com"
                   className="rounded-full bg-card p-3 text-primary shadow-sm transition-all hover:bg-primary hover:text-white"
                   aria-label="Email"
                   whileHover={{ scale: 1.2, rotate: 5 }}

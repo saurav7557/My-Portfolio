@@ -1,5 +1,6 @@
 import Hero from "@/components/hero"
 import About from "@/components/about"
+import ResumeDownload from "@/components/resume-download"
 import Projects from "@/components/projects"
 import Experience from "@/components/experience"
 import Contact from "@/components/contact"
@@ -16,6 +17,7 @@ export default function Home() {
         <Navbar />
         <Hero />
         <About />
+        <ResumeDownload />
         <Projects />
         <Experience />
         <Contact />

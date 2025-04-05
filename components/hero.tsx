@@ -25,7 +25,7 @@ const AnimatedBackground = () => {
 const NameAura = ({ children }) => {
   return (
     <div className="relative">
-      <div className="absolute -inset-1 rounded-lg bg-gradient-to-r from-purple-600 to-blue-500 opacity-75 blur-xl filter"></div>
+      <div className="absolute -inset-2 rounded-lg bg-gradient-to-r from-purple-600 to-blue-500 opacity-75 blur-xl filter"></div>
       <div className="relative">{children}</div>
     </div>
   )

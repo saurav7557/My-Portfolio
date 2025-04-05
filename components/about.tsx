@@ -12,7 +12,7 @@ import {
   Settings,
   Users,
 } from "lucide-react";
-import myPic from "../assets/myprofile.jpg"; 
+import profileimg from "./assets/myprofile2.jpg";
 
 const skills = [
   {
@@ -75,36 +75,66 @@ export default function About() {
         </motion.h2>
 
         <div className="flex flex-col items-center gap-12 md:flex-row">
-          {/* Profile Picture Section */}
           <motion.div
             className="md:w-1/3"
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <div className="group relative h-[400px] w-[300px] overflow-hidden rounded-lg border-4 border-primary">
-              <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-purple-600 to-blue-500 opacity-0 blur-xl filter transition-opacity duration-1000 group-hover:opacity-75"></div>
-              <img
-                src={myPic} // 
-                alt="My Profile"
-                className="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
-              />
+            <div className="group relative overflow-hidden rounded-lg">
+              <div className="absolute -inset-2 rounded-lg"></div>
+              <div className="relative h-[300px] w-[200px]">
+                <img
+                  src="https://media.licdn.com/dms/image/v2/D4D03AQGCUgJrlzFmWw/profile-displayphoto-shrink_800_800/B4DZX9R._JH4Ac-/0/1743711105874?e=1749081600&v=beta&t=eRM92KZK1dy-aKlpSG_13sXJ4xSQ0tq9vtsOlvY85eg"
+                  alt="Saurav Kumar"
+                />
+              </div>
             </div>
           </motion.div>
 
-          {/* About Me Text Section */}
           <motion.div
             className="md:w-2/3"
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            <p className="mb-6 text-lg">
+            <p className="mb-8 text-lg">
               Highly motivated software developer passionate about building
               scalable web applications, learning new technologies, and solving
               real-world problems. I enjoy creating interactive and
               user-friendly experiences with modern web technologies.
             </p>
+
+            <div className="mb-12">
+              <h3 className="mb-4 text-xl font-semibold">Education</h3>
+              <div className="space-y-4">
+                <div className="rounded-lg border border-border bg-card/30 p-4 backdrop-blur-sm">
+                  <p className="font-medium">
+                    Rungta College of Engineering and Technology, Bhilai, CG
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    Bachelor of Technology in Information Technology – 7.56 CGPA
+                    (June 2022 – May 2026)
+                  </p>
+                </div>
+                <div className="rounded-lg border border-border bg-card/30 p-4 backdrop-blur-sm">
+                  <p className="font-medium">
+                    Inter Mathurasini Mahavidyalaya Rajauli Nawada, Bihar
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    Intermediate – 70% (April 2019 – May 2021)
+                  </p>
+                </div>
+                <div className="rounded-lg border border-border bg-card/30 p-4 backdrop-blur-sm">
+                  <p className="font-medium">
+                    D.A.V Public School Daudnagar, Aurangabad, Bihar
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    Matriculation – 84.6% (April 2018 – May 2019)
+                  </p>
+                </div>
+              </div>
+            </div>
 
             <h3 className="mb-4 text-xl font-semibold">My Skills</h3>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">

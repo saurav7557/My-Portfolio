@@ -9,34 +9,51 @@ import { Github, ExternalLink } from "lucide-react"
 const projects = [
   {
     id: 1,
-    title: "E-commerce Platform",
-    description:
-      "A full-featured e-commerce platform with product listings, cart functionality, and payment processing.",
+    title: "IP Protection System",
+    description: "AI-powered system detecting and protecting Disney's intellectual property on YouTube in real-time.",
     image: "/placeholder.svg?height=300&width=500",
-    technologies: ["React", "Node.js", "MongoDB", "Express"],
-    features: ["User authentication", "Product search", "Shopping cart", "Payment integration"],
+    technologies: ["YOLOv5", "TensorFlow", "OpenCV"],
+    features: [
+      "AI-powered system detecting and protecting Disney's intellectual property on YouTube in real-time",
+      "Developed advanced video and audio analysis for content recognition",
+      "Implemented real-time detection and automated takedown processes",
+    ],
     github: "#",
     demo: "#",
+    color: "from-blue-600 to-indigo-600",
+    bgColor: "bg-gradient-to-r from-blue-600/20 to-indigo-600/20",
   },
   {
     id: 2,
-    title: "Weather Application",
-    description: "Real-time weather information app that provides forecasts for over 100,000 locations worldwide.",
+    title: "Blockchain-Based Certificate Generation & Validation",
+    description: "Built a decentralized app for issuing and validating certificates on the Ethereum blockchain.",
     image: "/placeholder.svg?height=300&width=500",
-    technologies: ["React", "OpenWeather API", "Tailwind CSS"],
-    features: ["Current weather", "5-day forecast", "Location search", "Responsive design"],
+    technologies: ["Solidity", "React.js", "Node.js", "IPFS"],
+    features: [
+      "Built a decentralized app for issuing and validating certificates on the Ethereum blockchain",
+      "Developed smart contracts in Solidity to create immutable, verifiable credentials",
+      "Designed a React.js frontend with QR code support for seamless certificate validation",
+    ],
     github: "#",
     demo: "#",
+    color: "from-purple-600 to-pink-600",
+    bgColor: "bg-gradient-to-r from-purple-600/20 to-pink-600/20",
   },
   {
     id: 3,
-    title: "Task Management System",
-    description: "A collaborative task management system for teams to organize and track project progress.",
+    title: "RentBlee - E-commerce Rental Platform",
+    description: "A rental platform allowing users to rent and vendors to list items.",
     image: "/placeholder.svg?height=300&width=500",
-    technologies: ["React", "Firebase", "Tailwind CSS"],
-    features: ["Task creation", "Deadline tracking", "Team collaboration", "Progress analytics"],
+    technologies: ["React", "Node.js", "Express.js", "MongoDB"],
+    features: [
+      "A rental platform allowing users to rent and vendors to list items",
+      "Implemented JWT-based role authentication for secure access",
+      "Designed a responsive UI and backend inventory management",
+    ],
     github: "#",
     demo: "#",
+    color: "from-emerald-600 to-teal-600",
+    bgColor: "bg-gradient-to-r from-emerald-600/20 to-teal-600/20",
   },
 ]
 
@@ -62,7 +79,7 @@ export default function Projects() {
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
-              className="group relative overflow-hidden rounded-xl"
+              className={`group relative overflow-hidden rounded-xl ${project.bgColor}`}
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
@@ -75,7 +92,7 @@ export default function Projects() {
                   alt={project.title}
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                <div className={`absolute inset-0 bg-gradient-to-t ${project.color} opacity-70`}></div>
               </div>
 
               <div className="absolute bottom-0 w-full backdrop-blur-sm bg-black/30 p-6">
@@ -84,7 +101,7 @@ export default function Projects() {
 
                 <div className="mb-4 flex flex-wrap gap-2">
                   {project.technologies.slice(0, 3).map((tech, i) => (
-                    <span key={i} className="rounded-full bg-white/10 px-2 py-1 text-xs text-white">
+                    <span key={i} className={`rounded-full bg-white/20 px-2 py-1 text-xs text-white`}>
                       {tech}
                     </span>
                   ))}
@@ -92,7 +109,7 @@ export default function Projects() {
 
                 <Button
                   onClick={() => setSelectedProject(project)}
-                  className="w-full transition-transform hover:scale-105 active:scale-95"
+                  className={`w-full bg-gradient-to-r ${project.color} transition-transform hover:scale-105 active:scale-95 border-none`}
                 >
                   View Details
                 </Button>
@@ -119,7 +136,10 @@ export default function Projects() {
                   <h4 className="mb-2 font-medium">Technologies</h4>
                   <div className="flex flex-wrap gap-2">
                     {selectedProject.technologies.map((tech, index) => (
-                      <span key={index} className="rounded-full bg-primary/10 px-3 py-1 text-sm text-primary">
+                      <span
+                        key={index}
+                        className={`rounded-full bg-gradient-to-r ${selectedProject.color} bg-opacity-10 px-3 py-1 text-sm text-white`}
+                      >
                         {tech}
                       </span>
                     ))}
@@ -149,7 +169,11 @@ export default function Projects() {
                       GitHub
                     </a>
                   </Button>
-                  <Button size="sm" className="transition-transform hover:scale-105 active:scale-95" asChild>
+                  <Button
+                    size="sm"
+                    className={`bg-gradient-to-r ${selectedProject.color} transition-transform hover:scale-105 active:scale-95 border-none`}
+                    asChild
+                  >
                     <a href={selectedProject.demo} target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="mr-2 h-4 w-4" />
                       Live Demo
